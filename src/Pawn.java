@@ -5,5 +5,9 @@ public class Pawn {
 	Pawn(){
 		color = "white";
 	}
+	
+	Pawn(String color){
+		this.color = color;
+	}
 
 }
