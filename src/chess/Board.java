@@ -13,9 +13,9 @@ public class Board {
 	
 	/**
 	 * 폰을 추가하고 폰의 개수도 하나씩 올려줌.
-	 * @param addPawn
+	 * @param addPawn -> 문제 2-8 : Pawn 클래스를 인자로 받고 있기 때문에 다른 객체가 추가될 리 없다
 	 */
-	public void addPawn(Pawn addPawn){
+	public void addPawn(Pawn addPawn){  
 		PawnList.add(addPawn);
 		NumOfPawn++;
 	}
