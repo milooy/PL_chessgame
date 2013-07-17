@@ -1,4 +1,7 @@
-
+/**
+ * @author kimminhyeok
+ * 폰 만드는 클래스.
+ */
 public class Pawn {
 	private static final String WHITE = "white";
 	private static final String BLACK = "black";
