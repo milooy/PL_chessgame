@@ -7,7 +7,11 @@ public class BoardTest extends TestCase {
 	private static final String WHITE = "white";
 	private static final String BLACK = "black";
 	
-	Board myBoard = new Board();
+	private Board myBoard;
+	
+	public void setUp(){
+		myBoard = new Board();
+	}
 	
 	public void testaddPawn() throws Exception {
 		myBoard.addPawn(new Pawn(BLACK));
