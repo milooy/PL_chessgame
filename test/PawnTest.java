@@ -13,4 +13,8 @@ public class PawnTest extends TestCase {
 		String mySecondpawnColor = mySecondPawn.color;
 		assertEquals(BLACK, mySecondpawnColor);
 	}
+	
+	public void testCreate2() throws Exception {
+		Pawn myPawn = new Pawn();
+	}
 }
