@@ -1,6 +1,8 @@
 package chess;
 import java.util.ArrayList;
 
+import pieces.Pawn;
+
 /**
  * @author kimminhyeok
  * 체스판 만드는 클래스.
