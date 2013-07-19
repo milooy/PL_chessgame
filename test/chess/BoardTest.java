@@ -16,8 +16,10 @@ public class BoardTest extends TestCase {
 		testBoard.initialize();
 		assertEquals(0, testBoard.getNumOfPawn());
 		
-		assertEquals("pppppppp", testBoard.printRow(1));
-		assertEquals("PPPPPPPP", testBoard.printRow(6));
+		assertEquals("pppppppp\n", testBoard.printRow(1));
+		assertEquals("PPPPPPPP\n", testBoard.printRow(6));
+		
+		testBoard.printBoard();
 	}
 	
 	public void testaddPawn() throws Exception {

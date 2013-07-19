@@ -9,7 +9,7 @@ import pieces.Pawn;
  */
 public class Board {
 	private int numOfPawn = 0;
-	
+	private static final String NEWLINE = System.getProperty("line.separator");
 	private ArrayList<Pawn> pawnList= new ArrayList<Pawn>();
 	private ArrayList<ArrayList<Pawn>> chessBoard = new ArrayList<ArrayList<Pawn>>();
 	
@@ -28,6 +28,7 @@ public class Board {
 		for (int idx = 0;idx<4;idx++)
 			chessBoard.add(emptyList);
 		chessBoard.add(blackList);
+		chessBoard.add(emptyList);
 	}
 	
 	/**
@@ -56,13 +57,25 @@ public class Board {
 		return pawnList.contains(testPawn);
 	}
 
+	public void printBoard(){
+		for (int idx = 7;idx >=0; idx--){
+			System.out.print(printRow(idx));
+		}
+	}
+	
 	public String printRow(int i) {
 		ArrayList<Pawn> rowListPawn = chessBoard.get(i);
 		StringBuilder sb = new StringBuilder();
 		
+		if (rowListPawn.size() == 0)
+			return "........" + NEWLINE;
+		
 		for (int idx = 0;idx < rowListPawn.size(); idx++){
 			sb.append(rowListPawn.get(idx).print());
+			
 		}
+		sb.append(NEWLINE);
+		
 		return sb.toString();
 	}
 }
