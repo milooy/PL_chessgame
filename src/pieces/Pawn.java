@@ -14,6 +14,10 @@ public class Pawn {
 	public Pawn(String color){
 		this.color = color;
 	}
+	
+	public void setColor(String color){
+		this.color = color;
+	}
 
 	@Override
 	public int hashCode() {
@@ -40,11 +44,13 @@ public class Pawn {
 		return true;
 	}
 
-	public char print() {
+	public String print() {
 		if (color == "black")
-			return 'P';
+			return "P";
+		else if (color == "white")
+			return "p";
 		else
-			return 'p';
+			return ".";
 	}
 
 }

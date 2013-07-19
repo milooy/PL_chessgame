@@ -20,7 +20,7 @@ public class PawnTest extends TestCase {
 		Pawn whitePawn = new Pawn();
 		Pawn blackPawn = new Pawn(BLACK);
 		
-		assertEquals('P', blackPawn.print());
-		assertEquals('p', whitePawn.print());
+		assertEquals("P", blackPawn.print());
+		assertEquals("p", whitePawn.print());
 	}
 }

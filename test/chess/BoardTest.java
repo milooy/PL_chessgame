@@ -13,7 +13,11 @@ public class BoardTest extends TestCase {
 	}
 	public void testCreate() throws Exception {
 		Board testBoard = new Board();
+		testBoard.initialize();
 		assertEquals(0, testBoard.getNumOfPawn());
+		
+		assertEquals("pppppppp", testBoard.printRow(1));
+		assertEquals("PPPPPPPP", testBoard.printRow(6));
 	}
 	
 	public void testaddPawn() throws Exception {
