@@ -4,8 +4,6 @@ package pieces;
  * 폰 만드는 클래스.
  */
 public class Pawn {
-	private static final String WHITE = "white";
-	private static final String BLACK = "black";
 	
 	String color;
 	
@@ -40,6 +38,13 @@ public class Pawn {
 		} else if (!color.equals(other.color))
 			return false;
 		return true;
+	}
+
+	public char print() {
+		if (color == "black")
+			return 'P';
+		else
+			return 'p';
 	}
 
 }
