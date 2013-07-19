@@ -7,7 +7,7 @@ public class PawnTest extends TestCase {
 	private static final String BLACK = "black";
 	
 	public void testCreate() throws Exception {
-		Pawn myPawn = new Pawn();
+		Pawn myPawn = new Pawn(WHITE);
 		String pawnColor = myPawn.color;
 		assertEquals(WHITE, pawnColor);
 
@@ -17,7 +17,7 @@ public class PawnTest extends TestCase {
 	}
 	
 	public void testPrintPawn() throws Exception {
-		Pawn whitePawn = new Pawn();
+		Pawn whitePawn = new Pawn(WHITE);
 		Pawn blackPawn = new Pawn(BLACK);
 		
 		assertEquals("P", blackPawn.print());

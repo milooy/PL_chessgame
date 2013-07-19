@@ -7,6 +7,7 @@ import pieces.Pawn;
  * @author kimminhyeok
  * 체스판 만드는 클래스.
  */
+
 public class Board {
 	private int numOfPawn = 0;
 	private static final String NEWLINE = System.getProperty("line.separator");
@@ -14,21 +15,7 @@ public class Board {
 	private ArrayList<ArrayList<Pawn>> chessBoard = new ArrayList<ArrayList<Pawn>>();
 	
 	public void initialize(){
-		ArrayList<Pawn> emptyList = new ArrayList<Pawn>();
-		ArrayList<Pawn> blackList= new ArrayList<Pawn>();
-		ArrayList<Pawn> whiteList= new ArrayList<Pawn>();
-		
-		for (int idx = 0;idx < 8;idx++){
-			blackList.add(new Pawn("black"));
-			whiteList.add(new Pawn());
-		}
-		
-		chessBoard.add(emptyList);
-		chessBoard.add(whiteList);
-		for (int idx = 0;idx<4;idx++)
-			chessBoard.add(emptyList);
-		chessBoard.add(blackList);
-		chessBoard.add(emptyList);
+		RowLine.doInit(chessBoard);
 	}
 	
 	/**
@@ -58,24 +45,19 @@ public class Board {
 	}
 
 	public void printBoard(){
-		for (int idx = 7;idx >=0; idx--){
+		for (int idx = 7;idx >=0; idx--)
 			System.out.print(printRow(idx));
-		}
 	}
 	
 	public String printRow(int i) {
 		ArrayList<Pawn> rowListPawn = chessBoard.get(i);
 		StringBuilder sb = new StringBuilder();
-		
-		if (rowListPawn.size() == 0)
-			return "........" + NEWLINE;
-		
-		for (int idx = 0;idx < rowListPawn.size(); idx++){
+				
+		for (int idx = 0;idx < rowListPawn.size(); idx++)
 			sb.append(rowListPawn.get(idx).print());
-			
-		}
 		sb.append(NEWLINE);
 		
 		return sb.toString();
 	}
+	
 }

@@ -4,21 +4,27 @@ package pieces;
  * 폰 만드는 클래스.
  */
 public class Pawn {
-	
+	private static final String COLOR_EMPTY = "";
+	private static final String SYMBOL_EMPTY = ".";
 	String color;
 	
 	public Pawn(){
-		color = "white";
+		color = COLOR_EMPTY;
 	}
 	
 	public Pawn(String color){
 		this.color = color;
 	}
-	
-	public void setColor(String color){
-		this.color = color;
-	}
 
+	public String print() {
+		if (color == "black")
+			return String.valueOf(Character.toUpperCase('p'));
+		else if (color == "white")
+			return "p";
+		else
+			return SYMBOL_EMPTY;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -43,14 +49,4 @@ public class Pawn {
 			return false;
 		return true;
 	}
-
-	public String print() {
-		if (color == "black")
-			return "P";
-		else if (color == "white")
-			return "p";
-		else
-			return ".";
-	}
-
 }
