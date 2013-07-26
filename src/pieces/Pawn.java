@@ -1,8 +1,5 @@
 package pieces;
-/**
- * @author kimminhyeok
- * 폰 만드는 클래스.
- */
+
 public class Pawn {
 	private static final String COLOR_EMPTY = "";
 	private static final String SYMBOL_EMPTY = ".";
