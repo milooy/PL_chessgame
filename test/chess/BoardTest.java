@@ -1,34 +1,27 @@
 package chess;
-import pieces.Pawn;
+import pieces.Piece;
+import util.StringUtil;
 import junit.framework.TestCase;
 
 
 public class BoardTest extends TestCase {
-	private static final String WHITE = "white";
-	private static final String BLACK = "black";
-	private Board myBoard;
+	Board testBoard = new Board();
 	
 	public void setUp(){
-		myBoard = new Board();
+		testBoard = new Board();
 	}
 	public void testCreate() throws Exception {
-		Board testBoard = new Board();
 		testBoard.initialize();
-		assertEquals(0, testBoard.getNumOfPawn());  // 개수 바뀔 필요 있음.
+		assertEquals(32, testBoard.getNumOfPawn());
 		
-		assertEquals("pppppppp\n", testBoard.printRow(1));
-		assertEquals("PPPPPPPP\n", testBoard.printRow(6));
+		String blankRank = StringUtil.appendNewLine("........");
+		assertEquals(
+				StringUtil.appendNewLine("RNBQKBNR") +
+				StringUtil.appendNewLine("PPPPPPPP") +
+				blankRank +blankRank+blankRank+blankRank+
+				StringUtil.appendNewLine("pppppppp") +
+				StringUtil.appendNewLine("rnbqkbnr"), testBoard.printBoard());
 		
-		testBoard.printBoard();
-	}
-	
-	public void testaddPawn() throws Exception {
-		myBoard.addPawn(new Pawn(BLACK));
-		myBoard.addPawn(new Pawn(WHITE));
-		
-		assertEquals(2, myBoard.getNumOfPawn());
-		assertEquals(true, myBoard.hasPawn(new Pawn(BLACK)));
-	}
-	
+	}	
 
 }

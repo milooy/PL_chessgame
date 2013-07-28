@@ -1,20 +1,20 @@
 package chess;
 import java.util.ArrayList;
 
-import pieces.Pawn;
+import pieces.Piece;
 import util.StringUtil;
 
 
 public class Board {
 	private int numOfPawn = 0;
-	private ArrayList<Pawn> pawnList= new ArrayList<Pawn>();
-	private ArrayList<ArrayList<Pawn>> chessBoard = new ArrayList<ArrayList<Pawn>>();
+	private ArrayList<Piece> pawnList= new ArrayList<Piece>();
+	private ArrayList<ArrayList<Piece>> chessBoard = new ArrayList<ArrayList<Piece>>();
 	
 	public void initialize(){
-		RowLine.doInit(chessBoard);
+		numOfPawn = RowLine.doInit(chessBoard);
 	}
 
-	public void addPawn(Pawn pawn){  
+	public void addPawn(Piece pawn){  
 		pawnList.add(pawn);
 		numOfPawn++;
 	}
@@ -23,17 +23,24 @@ public class Board {
 		return numOfPawn;
 	}
 	
-	public boolean hasPawn(Pawn pawn){
+	public boolean hasPawn(Piece pawn){
 		return pawnList.contains(pawn);
 	}
 
-	public void printBoard(){
-		for (int idx = 7;idx >=0; idx--)
+	public String printBoard(){
+		StringBuilder sb = new StringBuilder();
+		
+		for (int idx = 7;idx >=0; idx--){
 			System.out.print(printRow(idx));
+			sb.append(printRow(idx));
+		}
+		
+		return sb.toString();
+			
 	}
 	
 	public String printRow(int i) {
-		ArrayList<Pawn> rowListPawn = chessBoard.get(i);
+		ArrayList<Piece> rowListPawn = chessBoard.get(i);
 		StringBuilder sb = new StringBuilder();
 				
 		for (int idx = 0;idx < rowListPawn.size(); idx++)
