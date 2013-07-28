@@ -25,6 +25,9 @@ public class BoardTest extends TestCase {
 		assertEquals(16, Piece.numOfBlack);
 		assertEquals(16, Piece.numOfWhite);
 		
+		
+		assertTrue(Piece.create("black", "pawn").isBlack());
+		assertTrue(Piece.create("white", "pawn").isWhite());
 	}	
 
 }

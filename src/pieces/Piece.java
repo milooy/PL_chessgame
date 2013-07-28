@@ -8,6 +8,7 @@ public class Piece {
 	
 	String color;
 	String type;
+	
 	public static int numOfBlack = 0;
 	public static int numOfWhite = 0;
 	
@@ -65,6 +66,22 @@ public class Piece {
 			System.out.println("error!");
 			return ("x");
 		}
+	}
+	
+	
+	
+	public boolean isBlack(){
+		if (color == BLACK)
+			return true;
+		else
+			return false;
+	}
+
+	public boolean isWhite(){
+		if (color == WHITE)
+			return true;
+		else
+			return false;
 	}
 	
 	@Override
