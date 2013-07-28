@@ -22,6 +22,9 @@ public class BoardTest extends TestCase {
 				StringUtil.appendNewLine("pppppppp") +
 				StringUtil.appendNewLine("rnbqkbnr"), testBoard.printBoard());
 		
+		assertEquals(16, Piece.numOfBlack);
+		assertEquals(16, Piece.numOfWhite);
+		
 	}	
 
 }

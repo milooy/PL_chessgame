@@ -8,25 +8,24 @@ public class Piece {
 	
 	String color;
 	String type;
-
+	public static int numOfBlack = 0;
+	public static int numOfWhite = 0;
+	
 	private Piece(String color, String type){
 		this.color = color;
 		this.type = type;
 	}
 
 	public static Piece create(String color, String type){
+		if (color == BLACK)
+			numOfBlack++;
+		else if (color == WHITE)
+			numOfWhite++;
+		
 		return new Piece(color, type);
 	}	
 	
 	public String print() {
-		/*
-		if (color == BLACK)
-			return String.valueOf(Character.toUpperCase('p'));
-		else if (color == WHITE)
-			return "p";
-		else
-			return SYMBOL_EMPTY;*/
-		
 		if (color == BLACK){
 			if (type == "pawn")
 				return String.valueOf(Character.toUpperCase('p'));
