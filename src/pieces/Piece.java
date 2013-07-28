@@ -40,8 +40,10 @@ public class Piece {
 				return String.valueOf(Character.toUpperCase('q'));
 			else if(type == "king")
 				return String.valueOf(Character.toUpperCase('k'));		
-			System.out.println("error!");
-			return ("x");
+			else{
+				System.out.println("error!");		// 에러 처리
+				return ("x");
+			}
 		}
 		else if(color == WHITE){
 			if (type == "pawn")
@@ -56,8 +58,10 @@ public class Piece {
 				return "q";
 			else if(type == "king")
 				return "k";	
-			System.out.println("error!");
-			return ("x");
+			else {
+				System.out.println("error!");
+				return ("x");
+			}
 		}
 		else if (color == COLOR_EMPTY){
 			return SYMBOL_EMPTY;
@@ -67,8 +71,6 @@ public class Piece {
 			return ("x");
 		}
 	}
-	
-	
 	
 	public boolean isBlack(){
 		if (color == BLACK)
