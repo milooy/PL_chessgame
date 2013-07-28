@@ -1,10 +1,8 @@
 package pieces;
 import junit.framework.TestCase;
+import static pieces.Pawn.*;
 
 public class PawnTest extends TestCase {
-
-	private static final String WHITE = "white";
-	private static final String BLACK = "black";
 	
 	public void testCreate() throws Exception {
 		Pawn myPawn = new Pawn(WHITE);

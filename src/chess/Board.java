@@ -2,11 +2,11 @@ package chess;
 import java.util.ArrayList;
 
 import pieces.Pawn;
+import util.StringUtil;
 
 
 public class Board {
 	private int numOfPawn = 0;
-	private static final String NEWLINE = System.getProperty("line.separator");
 	private ArrayList<Pawn> pawnList= new ArrayList<Pawn>();
 	private ArrayList<ArrayList<Pawn>> chessBoard = new ArrayList<ArrayList<Pawn>>();
 	
@@ -14,8 +14,8 @@ public class Board {
 		RowLine.doInit(chessBoard);
 	}
 
-	public void addPawn(Pawn addPawn){  
-		pawnList.add(addPawn);
+	public void addPawn(Pawn pawn){  
+		pawnList.add(pawn);
 		numOfPawn++;
 	}
 	
@@ -23,8 +23,8 @@ public class Board {
 		return numOfPawn;
 	}
 	
-	public boolean hasPawn(Pawn testPawn){
-		return pawnList.contains(testPawn);
+	public boolean hasPawn(Pawn pawn){
+		return pawnList.contains(pawn);
 	}
 
 	public void printBoard(){
@@ -38,9 +38,8 @@ public class Board {
 				
 		for (int idx = 0;idx < rowListPawn.size(); idx++)
 			sb.append(rowListPawn.get(idx).print());
-		sb.append(NEWLINE);
 		
-		return sb.toString();
+		return StringUtil.appendNewLine(sb.toString());
 	}
 	
 }

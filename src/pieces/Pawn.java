@@ -1,8 +1,10 @@
 package pieces;
 
 public class Pawn {
-	private static final String COLOR_EMPTY = "";
-	private static final String SYMBOL_EMPTY = ".";
+	public static final String COLOR_EMPTY = "";
+	public static final String SYMBOL_EMPTY = ".";
+	public static final String WHITE = "white";
+	public static final String BLACK = "black";
 	String color;
 	
 	public Pawn(){
@@ -14,9 +16,9 @@ public class Pawn {
 	}
 
 	public String print() {
-		if (color == "black")
+		if (color == BLACK)
 			return String.valueOf(Character.toUpperCase('p'));
-		else if (color == "white")
+		else if (color == WHITE)
 			return "p";
 		else
 			return SYMBOL_EMPTY;

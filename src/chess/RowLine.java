@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import pieces.Pawn;
 
 public class RowLine {
+	public static final String WHITE = "white";
+	public static final String BLACK = "black";
+
 	public static void doInit(ArrayList<ArrayList<Pawn>> chessBoard){
 		ArrayList<Pawn> emptyList = new ArrayList<Pawn>();
 		ArrayList<Pawn> blackList= new ArrayList<Pawn>();
@@ -12,8 +15,8 @@ public class RowLine {
 		
 		for (int idx = 0;idx < 8;idx++){
 			emptyList.add(new Pawn());
-			blackList.add(new Pawn("black"));
-			whiteList.add(new Pawn("white"));
+			blackList.add(new Pawn(BLACK));
+			whiteList.add(new Pawn(WHITE));
 		}
 		
 		chessBoard.add(emptyList);
@@ -23,4 +26,6 @@ public class RowLine {
 		chessBoard.add(blackList);
 		chessBoard.add(emptyList);
 	}
+	
+	
 }
